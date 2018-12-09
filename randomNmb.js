@@ -16,10 +16,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
             <button onClick={this.handleClick} className="btn">Random number</button>
             <PanelResult text={this.state.text} number={this.state.number}>cyfra</PanelResult>
-            </React.Fragment>
+            </>
         )
     }
 }
@@ -31,3 +31,17 @@ const PanelResult = (props) => {
 }
 
 ReactDOM.render(<App />, document.getElementById(`root`));
+
+
+
+handleClick = () => {
+    const { text, number } = this.state;
+    let active = 0
+    const nmb = ++active
+    const random = Math.floor(Math.random() * 9) + `, `
+    this.setState({
+        text: text + random,
+        number: number + nmb
+    })
+}
+
