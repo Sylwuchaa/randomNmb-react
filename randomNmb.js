@@ -5,12 +5,13 @@ class App extends React.Component {
     }
 
     handleClick = () => {
+        const { text, number} = this.state
         let active = 0
         const nmb = ++active
         const random = Math.floor(Math.random() * 9) + `, `
         this.setState({
-            text: this.state.text + random,
-            number: this.state.number + nmb
+            text: text + random,
+            number: number + nmb
         })
     }
 
@@ -31,17 +32,3 @@ const PanelResult = (props) => {
 }
 
 ReactDOM.render(<App />, document.getElementById(`root`));
-
-
-
-handleClick = () => {
-    const { text, number } = this.state;
-    let active = 0
-    const nmb = ++active
-    const random = Math.floor(Math.random() * 9) + `, `
-    this.setState({
-        text: text + random,
-        number: number + nmb
-    })
-}
-
